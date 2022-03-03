@@ -38,12 +38,9 @@ a{
 	box-shadow: 0 0 20px 0 rgba(72,94,116,0.7)
 }
 
-.wrapper > *{
-	padding: 1em;
-}
-
 .contact{
 	background: #c9e6ff;
+	padding: 2em;
 }
 
 .contact ul{
@@ -53,17 +50,33 @@ a{
 
 .list{
 	background: #f9feff;
+	padding: 1em 2em;
+}
+
+.flex{
+	display: flex;
+	flex-direction: column;
 }
 
 /* Large Screen*/
-@media(min-width: 700px){
+@media(min-width: 650px){
 	.wrapper{
 		display: grid;
 		grid-template-columns: 1fr 2fr;
 	}
 
-	.wrapper > *{
+	.contact{
 		padding: 2em;
+	}
+
+	.flex{
+		flex-direction: row;
+		padding: 0;
+	}
+	
+	.list{
+		padding: 2em;
+		width: 50%;
 	}
 
 	.name ul{
