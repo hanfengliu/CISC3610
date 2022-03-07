@@ -33,11 +33,11 @@ Scene.start = function () {
 	}
 };
 
-// Once the basic HTML document is loaded and its parsing has taken place, start the scene.
+// start the scene when button is clicked
 start.addEventListener( 'click', Scene.start);
 
 Scene.clearCanvas = function () {
-    Scene.canvasContext.fillStyle = "white";
+    Scene.canvasContext.fillStyle = "aqua";
     Scene.canvasContext.fillRect(0, 0, Scene.canvas.width, Scene.canvas.height);
 };
 
@@ -46,22 +46,16 @@ Scene.mainLoop = function() {
     Scene.update();
     Scene.draw();
 	
-	// Animate at 24 frames a second.
+	// Animate at 2 frames a second at time increments of 500 ms
     window.setTimeout(Scene.mainLoop, 500);
 };
 
-Scene.update = function () {
-	// Set the canvas width to be that of the display Window. Which helps if you resize the window.
-  	//Scene.canvas.width = window.innerWidth;
-	
+Scene.update = function () {	
 	// Set the location of the next frame. 
   	Scene.sprite.offset=Scene.canvas.width/2;
-	// if(Scene.sprite.offset>Scene.canvas.width)
- 	// 	Scene.sprite.offset=-Scene.sprite.frames[Scene.sprite.frame].frame.w;
 };
 
 Scene.draw = function () {
-	//Scene.sprite.frame=9;
 	if(Scene.sprite.frame<10){
 		Scene.canvasContext.drawImage(
 		Scene.sprite.img,
@@ -77,7 +71,7 @@ Scene.draw = function () {
 		// Advance to the next frame.
 		Scene.sprite.frame++;
 	}
-	// At the end of the sprite sheet, start at the first frame.
+	// Stopping when the number 10 is reached, using a 1 and a 0 image from the sprite sheet
 	else if(Scene.sprite.frame==Scene.sprite.frames.length){
 		Scene.canvasContext.drawImage(
 			Scene.sprite.img,
@@ -102,7 +96,6 @@ Scene.draw = function () {
 			Scene.sprite.frames[0].frame.w,
 			Scene.sprite.frames[0].frame.h
 		);
-		return;	
     }
 };
 
