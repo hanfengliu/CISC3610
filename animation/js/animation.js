@@ -4,8 +4,7 @@ var Scene = {
     canvas : undefined,
     canvasContext : undefined,
 	sprite: undefined,
-	background: undefined,
-	dialog: undefined
+	background: undefined
 };
 
 const backToHomePage = document.querySelector('#return');
@@ -21,9 +20,6 @@ Scene.start = function () {
 
 	Scene.background = new Image();
 	Scene.background.src = "./img/street.jpg"
-
-	Scene.dialog = new Image();
-	Scene.dialog.src = "./img/dialog.png"
 	
 	// Seup the numbers to be displayed.
     Scene.sprite = animation;
@@ -34,7 +30,7 @@ Scene.start = function () {
 	
 	// Wait till the parrot image is loaded before starting the animation.
 	Scene.sprite.img.onload = function() {		
-		Scene.sprite.offset=Scene.sprite.frames[Scene.sprite.frame].frame.w+200;
+		Scene.sprite.offset=Scene.sprite.frames[Scene.sprite.frame].frame.w+400;
     	Scene.mainLoop();
 	}
 };
@@ -58,16 +54,18 @@ Scene.mainLoop = function() {
 
 Scene.update = function () {	
 	// Set the location of the next frame. 
-  	//Scene.sprite.offset-=10;
+  	Scene.sprite.offset-=5;
 	if (Scene.sprite.offset < -Scene.canvas.width+500)
-	  Scene.sprite.offset = Scene.sprite.frames[Scene.sprite.frame].frame.w+200;
+	  Scene.sprite.offset = Scene.sprite.frames[Scene.sprite.frame].frame.w+400;
 };
 
 Scene.draw = function () {
+	// create background
 	Scene.canvasContext.drawImage(
 		Scene.background, 0,0,700,500
 	);
 
+	// running person
 	Scene.canvasContext.drawImage(
 	Scene.sprite.img,
 	Scene.sprite.frames[Scene.sprite.frame].frame.x,
@@ -79,22 +77,28 @@ Scene.draw = function () {
 	Scene.sprite.frames[Scene.sprite.frame].frame.w/2,
 	Scene.sprite.frames[Scene.sprite.frame].frame.h/2);
 
+	var x = Scene.sprite.offset;
+	var y = Scene.canvas.width/2-Scene.sprite.frames[Scene.sprite.frame].frame.h/2;
+
+	// dialog box
 	Scene.canvasContext.beginPath();
+	Scene.canvasContext.moveTo(x,y);
+	Scene.canvasContext.lineTo(x-40, y-40)
+	Scene.canvasContext.lineTo(x, y-40)
+	Scene.canvasContext.closePath();
+	Scene.canvasContext.fill();	
 	Scene.canvasContext.ellipse(
-		Scene.sprite.offset-40, 
-		Scene.canvas.width/2-Scene.sprite.frames[Scene.sprite.frame].frame.h/2-40,
+		x-40, 
+		y-40,
 		90, 30,0,
 		0, 2 * Math.PI);
 	Scene.canvasContext.fill();
 	Scene.canvasContext.font = '16px serif';
     Scene.canvasContext.fillStyle = 'black';
-    Scene.canvasContext.fillText('I am running so fast !', Scene.sprite.offset-105, Scene.canvas.width/2-Scene.sprite.frames[Scene.sprite.frame].frame.h/2-40);
-
+    Scene.canvasContext.fillText('I love to exercise!', x-95, y-40);
 
 	// Advance to the next frame.
 	Scene.sprite.frame++;
-
-	console.log(Scene.sprite.offset)
 
 	if (Scene.sprite.frame == Scene.sprite.frames.length)
         Scene.sprite.frame = 0;

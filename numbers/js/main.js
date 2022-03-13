@@ -98,4 +98,3 @@ Scene.draw = function () {
 		);
     }
 };
-

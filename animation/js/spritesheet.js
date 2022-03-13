@@ -1,5 +1,5 @@
 animation={
-	src : "spritesheet.png",
+	src : "./img/spritesheet.png",
 	img: undefined,
 	frame:0,
 	offset: 0,
