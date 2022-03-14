@@ -2,6 +2,12 @@ const button = document.querySelector('#button');
 const title = document.querySelector('#title');
 const text = document.querySelector('#text');
 
+const backToHomePage = document.querySelector('#return');
+
+backToHomePage.addEventListener('click', (e)=>{
+    window.location.replace("../index.html");
+})
+
 window.addEventListener('DOMContentLoaded', (event) => {
     const info = JSON.parse(localStorage.getItem("info"));
     if(info==null)
