@@ -3,9 +3,11 @@
     padding: 0;
 }
 
-.container{
+.charts-container{
     display: flex;
     flex-direction: row;
+    height:100%;
+    width:100%;
 }
 
 .chart-container{
@@ -22,13 +24,15 @@
     padding: 1em 0em;
 }
 
-@media(max-width: 960px){
-    .container{
+@media(max-width: 1080px){
+    .charts-container{
         flex-direction: column;
+        width:100%;
+        height: auto;
     }
 
     .chart-container{
         height:50%;
-        width:100vw;
+        width:90%;
     }
 }
