@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.chart-container{
+    position: relative;
+    height:100vh;
+    width:50%;
+}
+
+.button{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 15%;
+    padding: 1em 0em;
+}
+
+@media(max-width: 960px){
+    .container{
+        flex-direction: column;
+    }
+
+    .chart-container{
+        height:50%;
+        width:100vw;
+    }
+}
