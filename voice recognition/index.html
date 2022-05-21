@@ -87,7 +87,7 @@
         if (transcript === "help") {
           console.log("help is being called");
           recognition.stop();
-          startBtn.textContent = "Stop";
+          startBtn.textContent = "Start";
 
           const utter = new SpeechSynthesisUtterance(
             "Say a name of the object on the screen. Say about, to hear about the program."
@@ -96,7 +96,7 @@
         } else if (transcript === "about") {
           console.log("about is being called");
           recognition.stop();
-          startBtn.textContent = "Stop";
+          startBtn.textContent = "Start";
 
           const utter2 = new SpeechSynthesisUtterance(
             "Author by Hanfeng Liu, Copyright:2022"
@@ -105,7 +105,7 @@
         } else if (transcript === "dog") {
           console.log("dog is being called");
           recognition.stop();
-          startBtn.textContent = "Stop";
+          startBtn.textContent = "Start";
 
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -118,7 +118,7 @@
         } else if (transcript === "cat") {
           console.log("cat is being called");
           recognition.stop();
-          startBtn.textContent = "Stop";
+          startBtn.textContent = "Start";
 
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -131,7 +131,7 @@
         } else if (transcript === "cow") {
           console.log("cow is being called");
           recognition.stop();
-          startBtn.textContent = "Stop";
+          startBtn.textContent = "Start";
 
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -144,7 +144,7 @@
         } else if (transcript === "dolphin") {
           console.log("dolphin is being called");
           recognition.stop();
-          startBtn.textContent = "Stop";
+          startBtn.textContent = "Start";
 
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -157,7 +157,7 @@
         } else if (transcript === "sheep") {
           console.log("sheep is being called");
           recognition.stop();
-          startBtn.textContent = "Stop";
+          startBtn.textContent = "Start";
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
           image.src = "img/sheep.jpg";
@@ -169,7 +169,7 @@
         } else {
           console.log("not  recognize");
           recognition.stop();
-          startBtn.textContent = "Stop";
+          startBtn.textContent = "Start";
 
           const utter3 = new SpeechSynthesisUtterance(
             "Not  recognize and please try again."
