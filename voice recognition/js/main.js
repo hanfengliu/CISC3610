@@ -111,6 +111,7 @@ recognition.onresult = (e) => {
       ctx.drawImage(sheep, 0, 0);
     };
   } else {
+    console.log("not  recognize");
     recognition.stop();
     const utter3 = new SpeechSynthesisUtterance(
       "i did not hear that. Can you say it again."
