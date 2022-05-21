@@ -17,9 +17,23 @@
         width: 800px;
         height: 600px;
       }
+      #return {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: auto;
+      }
     </style>
   </head>
   <body class="container">
+    <div>
+      <input
+        id="return"
+        type="button"
+        value="Return"
+        class="btn btn-primary btn-block mb-3"
+      />
+    </div>
     <section class="mt-3">
       <h1>Instructions</h1>
       <ul class="list-unstyled">
@@ -44,14 +58,19 @@
       <button class="btn btn-primary btn-block mb-3" type="button" id="button">
         Speak
       </button>
-      <div>
+      <section>
         <canvas id="canvas">
           <output name="result" for="canvas"></output>
         </canvas>
-      </div>
+      </section>
     </section>
 
     <script>
+      const backToHomePage = document.querySelector("#return");
+      backToHomePage.addEventListener("click", (e) => {
+        window.location.replace("../index.html");
+      });
+
       const canvas = document.getElementById("canvas");
       const ctx = canvas.getContext("2d");
       const image = new Image();
