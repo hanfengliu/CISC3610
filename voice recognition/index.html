@@ -67,7 +67,12 @@
       recognition.grammars = SpeechGrammarList;
 
       startBtn.addEventListener("click", () => {
-        if (!this.recognition) {
+        console.log("here");
+        if (startBtn.textContent === "Speak") {
+          console.log("stop");
+          recognition.stop();
+        } else {
+          console.log("start");
           startBtn.textContent = "Speak";
           recognition.start();
         }
