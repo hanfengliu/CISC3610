@@ -1,0 +1,52 @@
+.canvas-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+#canvas {
+  position: absolute;
+  background-color: lightgrey;
+  left: 10%;
+}
+
+.button{
+    width: 80px;
+}
+
+#button-1 {
+  position: absolute;
+  left: 35%;
+  top: 30%;
+}
+
+#button-2 {
+  position: absolute;
+  left: 65%;
+  top: 30%;
+}
+
+#button-3 {
+  position: absolute;
+  left: 35%;
+  top: 45%;
+}
+
+#button-4 {
+  position: absolute;
+  left: 65%;
+  top: 45%;
+}
+
+#button-5 {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+}
+
+#return {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 10px auto;
+}
