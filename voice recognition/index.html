@@ -70,6 +70,8 @@
         console.log("here");
         if (startBtn.textContent === "Speak") {
           console.log("stop");
+          startBtn.textContent = "Stop";
+
           recognition.stop();
         } else {
           console.log("start");
