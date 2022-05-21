@@ -30,7 +30,8 @@ function update() {
 const synth = window.speechSynthesis;
 
 startBtn.addEventListener("click", () => {
-  recognition.start();
+    if(!this.recognition)
+        recognition.start();
 });
 
 recognition.onresult = (e) => {
