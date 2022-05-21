@@ -48,22 +48,10 @@
       </div>
     </section>
 
-    <img id="cat" src="img/cat.jpg" alt="cat" hidden />
-    <img id="cow" src="img/cow.jpg" alt="cow" hidden />
-    <img id="dog" src="img/dog.jpg" alt="dog" hidden />
-    <img id="dolphin" src="img/dolphin.jpg" alt="dolphin" hidden />
-    <img id="sheep" src="img/sheep.jpg" alt="sheep" hidden />
-
     <script>
       var canvas = document.getElementById("canvas");
       var ctx = canvas.getContext("2d");
-      const catImg = document.getElementById("cat");
-      const cowImg = document.getElementById("cow");
-      const dogImg = document.getElementById("dog");
-      const dolphinImg = document.getElementById("dolphin");
-      const sheepImg = document.getElementById("sheep");
       const image = new Image();
-
       const startBtn = document.querySelector("#button");
 
       var recognition = new webkitSpeechRecognition();
@@ -114,7 +102,7 @@
 
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-          image.src = dogImg;
+          image.src = "img/dog.jpg";
           image.onload = function () {
             canvas.width = this.naturalWidth;
             canvas.height = this.naturalHeight;
@@ -125,7 +113,7 @@
           recognition.stop();
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-          image.src = catImg;
+          image.src = "img/cat.jpg";
           cat.onload = function () {
             canvas.width = this.naturalWidth;
             canvas.height = this.naturalHeight;
@@ -136,8 +124,8 @@
           recognition.stop();
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-          image.src = cowImg;
-          IMAGE.onload = function () {
+          image.src = "img/cow.jpg";
+          image.onload = function () {
             canvas.width = this.naturalWidth;
             canvas.height = this.naturalHeight;
             ctx.drawImage(image, 0, 0);
@@ -147,7 +135,7 @@
           recognition.stop();
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-          image.src = dolphinImg;
+          image.src = "img/dolphin.jpg";
           image.onload = function () {
             canvas.width = this.naturalWidth;
             canvas.height = this.naturalHeight;
