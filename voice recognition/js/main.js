@@ -113,9 +113,7 @@ recognition.onresult = (e) => {
   } else {
     console.log("not  recognize");
     recognition.stop();
-    const utter3 = new SpeechSynthesisUtterance(
-      "i did not hear that. Can you say it again."
-    );
+    const utter3 = new SpeechSynthesisUtterance("Not  recognize and please try again.");
     synth.speak(utter3);
   }
 };
