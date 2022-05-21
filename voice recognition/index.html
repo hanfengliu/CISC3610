@@ -72,11 +72,6 @@
       recognition.grammars = SpeechGrammarList;
 
       btn.addEventListener("click", () => {
-        if (this.recognition) {
-          btn.textContent = "Speak";
-          recognition.stop();
-        }
-
         if (btn.textContent === "Speak") {
           btn.textContent = "Speak";
           recognition.stop();
