@@ -57,7 +57,7 @@ recognition.onresult = (e) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     var dog = new Image();
-    dog.src = "image/dog.jpg";
+    dog.src = "img/dog.jpg";
     dog.onload = function () {
       canvas.width = this.naturalWidth;
       canvas.height = this.naturalHeight;
@@ -69,7 +69,7 @@ recognition.onresult = (e) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     var cat = new Image();
-    cat.src = "image/cat.jpg";
+    cat.src = "img/cat.jpg";
     cat.onload = function () {
       canvas.width = this.naturalWidth;
       canvas.height = this.naturalHeight;
@@ -81,7 +81,7 @@ recognition.onresult = (e) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     var cow = new Image();
-    cow.src = "image/cow.jpg";
+    cow.src = "img/cow.jpg";
     cow.onload = function () {
       canvas.width = this.naturalWidth;
       canvas.height = this.naturalHeight;
@@ -93,7 +93,7 @@ recognition.onresult = (e) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     var pig = new Image();
-    pig.src = "image/pig.jpg";
+    pig.src = "img/pig.jpg";
     pig.onload = function () {
       canvas.width = this.naturalWidth;
       canvas.height = this.naturalHeight;
@@ -105,7 +105,7 @@ recognition.onresult = (e) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     var sheep = new Image();
-    sheep.src = "image/sheep.jpg";
+    sheep.src = "img/sheep.jpg";
     sheep.onload = function () {
       canvas.width = this.naturalWidth;
       canvas.height = this.naturalHeight;
