@@ -51,12 +51,18 @@
     <img id="cat" src="img/cat.jpg" alt="cat" hidden />
     <img id="cow" src="img/cow.jpg" alt="cow" hidden />
     <img id="dog" src="img/dog.jpg" alt="dog" hidden />
-    <img id="dolphin" src="img/dolphin.jpg" alt="pig" hidden />
+    <img id="dolphin" src="img/dolphin.jpg" alt="dolphin" hidden />
     <img id="sheep" src="img/sheep.jpg" alt="sheep" hidden />
 
     <script>
       var canvas = document.getElementById("canvas");
       var ctx = canvas.getContext("2d");
+      const catImg = document.getElementById("cat");
+      const cowImg = document.getElementById("cow");
+      const dogImg = document.getElementById("dog");
+      const dolphinImg = document.getElementById("dolphin");
+      const sheepImg = document.getElementById("sheep");
+      const image = new Image();
 
       const startBtn = document.querySelector("#button");
 
@@ -108,60 +114,55 @@
 
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-          var dog = new Image();
-          dog.src = "img/dog.jpg";
-          dog.onload = function () {
+          image.src = dogImg;
+          image.onload = function () {
             canvas.width = this.naturalWidth;
             canvas.height = this.naturalHeight;
-            ctx.drawImage(dog, 0, 0);
+            ctx.drawImage(image, 0, 0);
           };
         } else if (transcript === "cat") {
           console.log("cat is being called");
           recognition.stop();
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-          var cat = new Image();
-          cat.src = "img/cat.jpg";
+          image.src = catImg;
           cat.onload = function () {
             canvas.width = this.naturalWidth;
             canvas.height = this.naturalHeight;
-            ctx.drawImage(cat, 0, 0);
+            ctx.drawImage(image, 0, 0);
           };
         } else if (transcript === "cow") {
           console.log("cow is being called");
           recognition.stop();
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-          var cow = new Image();
-          cow.src = "img/cow.jpg";
-          cow.onload = function () {
+          image.src = cowImg;
+          IMAGE.onload = function () {
             canvas.width = this.naturalWidth;
             canvas.height = this.naturalHeight;
-            ctx.drawImage(cow, 0, 0);
+            ctx.drawImage(image, 0, 0);
           };
         } else if (transcript === "dolphin") {
           console.log("dolphin is being called");
           recognition.stop();
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-          var pig = new Image();
-          pig.src = "img/dolphin.jpg";
-          pig.onload = function () {
+          image.src = dolphinImg;
+          image.onload = function () {
             canvas.width = this.naturalWidth;
             canvas.height = this.naturalHeight;
-            ctx.drawImage(pig, 0, 0);
+            ctx.drawImage(image, 0, 0);
           };
         } else if (transcript === "sheep") {
           console.log("sheep is being called");
           recognition.stop();
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-          var sheep = new Image();
-          sheep.src = "img/sheep.jpg";
-          sheep.onload = function () {
+          image.src = "img/sheep.jpg";
+          image.onload = function () {
             canvas.width = this.naturalWidth;
             canvas.height = this.naturalHeight;
-            ctx.drawImage(sheep, 0, 0);
+            ctx.drawImage(image, 0, 0);
           };
         } else {
           console.log("not  recognize");
