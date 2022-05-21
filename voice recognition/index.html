@@ -68,14 +68,16 @@
 
       startBtn.addEventListener("click", () => {
         console.log("here");
+        if (this.recognition) recognition.stop();
+
         if (startBtn.textContent === "Speak") {
           console.log("stop");
-          startBtn.textContent = "Stop";
+          startBtn.textContent = "Speak";
 
           recognition.stop();
         } else {
           console.log("start");
-          startBtn.textContent = "Speak";
+          startBtn.textContent = "Stop";
           recognition.start();
         }
       });
