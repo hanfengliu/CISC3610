@@ -66,17 +66,12 @@
       SpeechGrammarList.addFromString(grammar, 1);
       recognition.grammars = SpeechGrammarList;
 
-      startBtn.addEventListener("click", update);
-
-      function update() {
-        if (startBtn.textContent === "Speak") {
-          startBtn.textContent = "Stop";
-          recognition.stop();
-        } else {
+      startBtn.addEventListener("click", () => {
+        if (!this.recognition) {
           startBtn.textContent = "Speak";
           recognition.start();
         }
-      }
+      });
 
       const synth = window.speechSynthesis;
 
@@ -85,6 +80,8 @@
         if (transcript === "help") {
           console.log("help is being called");
           recognition.stop();
+          startBtn.textContent = "Stop";
+
           const utter = new SpeechSynthesisUtterance(
             "Say a name of the object on the screen. Say about, to hear about the program."
           );
@@ -92,6 +89,8 @@
         } else if (transcript === "about") {
           console.log("about is being called");
           recognition.stop();
+          startBtn.textContent = "Stop";
+
           const utter2 = new SpeechSynthesisUtterance(
             "Author by Hanfeng Liu, Copyright:2022"
           );
@@ -99,6 +98,7 @@
         } else if (transcript === "dog") {
           console.log("dog is being called");
           recognition.stop();
+          startBtn.textContent = "Stop";
 
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -111,10 +111,12 @@
         } else if (transcript === "cat") {
           console.log("cat is being called");
           recognition.stop();
+          startBtn.textContent = "Stop";
+
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
           image.src = "img/cat.jpg";
-          cat.onload = function () {
+          image.onload = function () {
             canvas.width = this.naturalWidth;
             canvas.height = this.naturalHeight;
             ctx.drawImage(image, 0, 0);
@@ -122,6 +124,8 @@
         } else if (transcript === "cow") {
           console.log("cow is being called");
           recognition.stop();
+          startBtn.textContent = "Stop";
+
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
           image.src = "img/cow.jpg";
@@ -133,6 +137,8 @@
         } else if (transcript === "dolphin") {
           console.log("dolphin is being called");
           recognition.stop();
+          startBtn.textContent = "Stop";
+
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
           image.src = "img/dolphin.jpg";
@@ -144,6 +150,7 @@
         } else if (transcript === "sheep") {
           console.log("sheep is being called");
           recognition.stop();
+          startBtn.textContent = "Stop";
           ctx.clearRect(0, 0, canvas.width, canvas.height);
 
           image.src = "img/sheep.jpg";
@@ -155,6 +162,8 @@
         } else {
           console.log("not  recognize");
           recognition.stop();
+          startBtn.textContent = "Stop";
+
           const utter3 = new SpeechSynthesisUtterance(
             "Not  recognize and please try again."
           );
